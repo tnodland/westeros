@@ -6,14 +6,11 @@ require 'rails_helper'
 RSpec.describe WesterosService do
   it "can get members of a house" do
     service = WesterosService.new
-    response = service.house_members("stark")
+    response = service.house_members(1)
 
-    expect(response).to be_a(Hash)
-    expect(response[:id]).to eq("1")
-    expect(response[:attributes]).to be_a(Hash)
-    expect(response[:attributes][:members]).to be_a(Array)
-    expect(response[:attributes][:members][0]).to have_key(:id)
-    expect(response[:attributes][:members][0]).to have_key(:name)
-    expect(response[:attributes][:members][0]).to have_key(:house_id)
+    expect(response).to be_a(Array)
+    expect(response[0]).to be_a(Hash)
+    expect(response[0]).to have_key(:id)
+    expect(response[0]).to have_key(:name)
   end
 end
