@@ -12,13 +12,13 @@ RSpec.describe "as a visitor" do
       # Then my path should be "/search" with "house=greyjoy" in the parameters
       expect(current_path).to eq('/search')
       # And I should see a message "7 Members"
-      expect(page).to have_content("& Members")
+      expect(page).to have_content("7 Members Found")
       # And I should see a list of the 7 members of House Greyjoy
       expect(page.all('.member').count).to eq(7)
       # And I should see a name and id for each member.
       within(page.all('.member').first) do
         expect(page).to have_content("Name: ")
-        expect(page).to have_content("ID: ")      
+        expect(page).to have_content("ID: ")
       end
     end
   end
