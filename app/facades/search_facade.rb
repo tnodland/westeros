@@ -5,6 +5,10 @@ class SearchFacade
 
   def members
     service = WesterosService.new
-    members = service.house_members(@house)
+    data = service.house_members(@house)
+    member_data = data[:attributes][:members]
+    member_data.map do |member|
+      HouseMember.new(member)
+    end
   end
 end
