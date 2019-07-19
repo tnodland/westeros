@@ -1,1 +1,8 @@
 <h1><%= search.members.count %> Members Found</h1>
+
+<% search.members.each do |member| %>
+  <section class="member">
+    <p>Name: <%= member.name %></p>
+    <p>ID: <%= member.id %></p>
+  </section>
+<% end %>
