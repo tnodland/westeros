@@ -1,5 +1,7 @@
-require 'spec_helper'
-require './app/services/westeros_service'
+require 'rails_helper'
+# require './app/services/westeros_service'
+# require 'pry'
+# require 'figaro'
 
 RSpec.describe WesterosService do
   it "can get members of a house" do
